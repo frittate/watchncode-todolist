@@ -86,24 +86,22 @@ let handlers = {
 
 let view = {
   displayTodos: function(){
-    let todosUl = document.querySelector('ul');
+    let todosUl = document.querySelector('ul'); //function on view
     todosUl.innerHTML = '';
-    for (var i = 0; i < todoList.todos.length; i++){
-          let todoLi = document.createElement('li');
-          let todo = todoList.todos[i];
-          
-          let todoTextWithCompletion = '';
+    
+    todoList.todos.forEach(function(todo, position){ 
+      let todoLi = document.createElement('li');
+      let todoTextWithCompletion = '';
           if (todo.completed === true){
             todoTextWithCompletion = '(x) ' + todo.todoText;
           } else {
             todoTextWithCompletion = '( ) ' + todo.todoText;
           }
-          todoLi.id = i;
-          todoLi.textContent = todoTextWithCompletion;
-          todoLi.appendChild(this.createDeleteButton());
-          todosUl.appendChild(todoLi);
-          
-    }
+      todoLi.id = position;
+      todoLi.textContent = todoTextWithCompletion;
+      todoLi.appendChild(this.createDeleteButton());
+      todosUl.appendChild(todoLi);
+    }, this) //callback with passed thru 'this' AFTER the callback
   },
   
   createDeleteButton: function(){

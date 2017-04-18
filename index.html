@@ -2,25 +2,39 @@
 <html>
 
   <head>
-    <link rel="stylesheet" href="style.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
     
   </head>
 
   <body>
     <h1>Todo List App</h1>
     <div>
-      <button onclick="handlers.toggleAll()">Toggle All</button>
+      <button class="btn" onclick="handlers.toggleAll()">Toggle All</button>
     </div>
     
-    <div>
-      <button onclick="handlers.addTodo()">Add</button>
-      <input type="text" id="addTodoTextInput">
+    <div class="md-form">
+      <input class="form-control" type="text" id="addTodoTextInput" width="100px">
+      <label for="addTodoTextInput" class="">Example label</label>
     </div>
-    
+
+    <button class="btn btn-default" onclick="handlers.addTodo()">Add</button>
+
     <div>
-      <button onclick="handlers.changeTodo()">Change</button>
       <input id="changeTodoPositionInput" type ="number" value="0">
       <input id="changeTodoTextInput" type="text">
+      <button onclick="handlers.changeTodo()">Change</button>
     </div>
     
     
@@ -33,8 +47,14 @@
     <ul>
       <p>List seems empty</p>
     </ul>
-    
-    <script src="script.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 
 </html>

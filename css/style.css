@@ -1,0 +1,6 @@
+/* YOUR CUSTOM STYLES */
+.btn-floating {
+    max-width: 10vh;
+    max-height: 30vh;
+    border-radius: 50%;
+}
